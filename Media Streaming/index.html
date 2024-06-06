@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resource Library</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Resource Library</h1>
+      <ul id="movie-list"></ul>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="disclaimer">
+          The content provided is the sole responsibility of the device owner.
+          Quantum Networks is not liable for its accuracy or reliability.
+        </p>
+        <div class="footer-logo">
+          <img
+            class="logo"
+            src="https://logosandtypes.com/wp-content/uploads/2023/04/quantum-networks.svg"
+            alt="Quantum Networks Logo"
+          />
+          <p class="text">Quantum Networks</p>
+        </div>
+
+        <p class="copyright">
+          &copy; <span id="current-year"></span> Quantum Networks (SG) Pte. Ltd.
+          All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
 
