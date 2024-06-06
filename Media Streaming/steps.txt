@@ -1,0 +1,26 @@
+### Steps For streaming test :
+
+Dependency Package :
+
+kmod-fs-ext4, kmod-fs-btrfs, kmod-fs-exfat, ntfs-3g, minidlna, fuse-utils, block-mount, e2fsprogs, kmod-usb3, kmod-usb-storage, kmod-fs-vfat, kmod-nls-cp437, kmod-nls-iso8859-1, kmod-fs-msdos
+
+firmaware :
+
+220 (FAT,BTRFS,NTFS,EXT) - https://rudder.qntmnet.com/api/v1/wasb_fw_download/QN-I-220.HW2-i220.hw2-stream.sysupgrade
+270 (BTRFS,NTFS,EXT)     - https://rudder.qntmnet.com/api/v1/wasb_fw_download/QN-I-270-7.0.1.B1-stream.sysupgrade
+280 (BTRFS,NTFS,EXT)     - http://172.105.35.235:9000/firmwares/QN-I-280-7.0.1.B1_Jun04-1642.sysupgrade
+
+steps :
+
+Connect USB with AP with folder name video in root directory
+
+1. Update the firmaware
+2. wget --no-check-certificate https://rudder.qntmnet.com/api/v1/wasb_fw_download/stream.tar.gz
+3. tar -xvf stream.tar.gz -C /www/
+4. wget --no-check-certificate https://rudder.qntmnet.com/api/v1/wasb_fw_download/uhttpd -O /etc/config/uhttpd
+5. wget --no-check-certificate https://rudder.qntmnet.com/api/v1/wasb_fw_download/minidlna -O /etc/config/minidlna
+6. sh /www/stream/movieJson.sh
+7. set up DNS proxy from GUI to redirect with LAN ip "192.168.168.1"
+8. Open url browser: 
+NAT TO WAN    - https://library.qntmnet.com
+Bridge TO WAN - https://10.1.1.181/stream  OR  https://10.1.1.181:8300
